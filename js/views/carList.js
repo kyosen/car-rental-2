@@ -3,8 +3,9 @@ var app = app || {};
 app.CarListView = Backbone.View.extend({
   el: '#cars',
 
-  initialize: function (initialCars) {
-    this.collection = new app.CarList(initialCars);
+  initialize: function () {
+    this.collection = new app.CarList();
+    this.collection.fetch();
     this.render();
     this.listenTo(this.collection, 'add', this.renderCar);
   },
@@ -37,6 +38,6 @@ app.CarListView = Backbone.View.extend({
       }
     });
 
-    this.collection.add(new app.Car(formData));
+    this.collection.create(new app.Car(formData));
   }
 });
