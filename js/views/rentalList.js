@@ -24,7 +24,7 @@ app.RentalListView = Backbone.View.extend({
   },
 
   events: {
-    'click #add': 'addRental'
+    'click #rentalAdd': 'addRental'
   },
 
   addRental: function (e) {
