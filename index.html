@@ -59,9 +59,24 @@
 
   <script id="carTemplate" type="text/template">
     <ul>
+      <li><%= id %></li>
       <li><%= carType %></li>
       <li><%= capacity %></li>
       <li><%= feePerDay %></li>
+    </ul>
+
+    <button class="delete">削除</button>
+    <button class="rental">レンタル</button>
+  </script>
+
+  <script id="rentalTemplate" type="text/template">
+    <ul>
+      <li><%= id %></li>
+      <li><%= fromDate %></li>
+      <li><%= toDate %></li>
+      <li><%= carId %></li>
+      <li><%= customer %></li>
+      <li><%= telephone %></li>
     </ul>
 
     <button class="delete">削除</button>
