@@ -8,5 +8,14 @@ app.CarView = Backbone.View.extend({
   render: function () {
     this.$el.html(this.template(this.model.toJSON()));
     return this;
+  },
+
+  events: {
+    'click .delete': 'deleteCar'
+  },
+
+  deleteCar: function () {
+    this.model.destroy();
+    this.remove();
   }
 });
