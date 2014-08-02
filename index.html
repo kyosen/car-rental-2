@@ -10,14 +10,14 @@
   <div id="cars">
     <form id="addCar" action="#">
       <div>
-        <label for="car_type">車種: </label>
-        <input id="car_type" type="text" />
+        <label for="carType">車種: </label>
+        <input id="carType" type="text" />
 
         <label for="capacity">乗車人員: </label>
         <input id="capacity" type="text" />
 
-        <label for="fee_per_day">レンタル料金（1日）: </label>
-        <input id="fee_per_day" type="text" />
+        <label for="feePerDay">レンタル料金（1日）: </label>
+        <input id="feePerDay" type="text" />
 
         <button id="add">追加</button>
       </div>
@@ -26,9 +26,9 @@
 
   <script id="carTemplate" type="text/template">
     <ul>
-      <li><%= car_type %></li>
+      <li><%= carType %></li>
       <li><%= capacity %></li>
-      <li><%= fee_per_day %></li>
+      <li><%= feePerDay %></li>
     </ul>
 
     <button class="delete">削除</button>
@@ -39,6 +39,6 @@
   <script src="js/lib/backbone-min.js"></script>
   <script src="js/lib/backbone.localStorage.js"></script>
   <script src="js/models/car.js"></script>
-  <script src="js/collections/cars.js"></script>
+  <script src="js/collections/carList.js"></script>
 </body>
 </html>

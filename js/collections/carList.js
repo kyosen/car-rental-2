@@ -2,7 +2,7 @@ var app = app || {};
 
 // Carコレクション
 
-var CarList = Backbone.Collection.extend({
+app.CarList = Backbone.Collection.extend({
   model: app.Car,
   localStorage: new Backbone.LocalStorage('cars-backbone'),
 
@@ -17,5 +17,3 @@ var CarList = Backbone.Collection.extend({
     return car.get('order');
   }
 });
-
-app.Cars = new CarList();

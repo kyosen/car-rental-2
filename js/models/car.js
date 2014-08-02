@@ -4,8 +4,8 @@ var app = app || {};
 
 app.Car = Backbone.Model.extend({
   defaults: {
-    car_type: '',
+    carType: '',
     capacity: 0,
-    fee_per_day: 0
+    feePerDay: 0
   }
 });
