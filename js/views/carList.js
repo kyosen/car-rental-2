@@ -37,6 +37,7 @@ app.CarListView = Backbone.View.extend({
         formData[el.id] = $(el).val();
       }
     });
+    formData['carId'] = this.collection.nextCarId();
 
     this.collection.create(new app.Car(formData));
   }
