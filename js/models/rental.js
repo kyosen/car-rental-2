@@ -7,6 +7,7 @@ app.Rental = Backbone.Model.extend({
     fromDate: null,
     toDate: null,
     carId: null,
+    car: null,
     customer: '',
     telephone: ''
   }

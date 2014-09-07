@@ -34,10 +34,23 @@ app.RentalListView = Backbone.View.extend({
 
     $('#addRental div').children('input').each(function (i, el) {
       if ($(el).val() != '') {
-        formData[el.id] = $(el).val();
+        switch (el.id) {
+          case 'carId':
+            formData[el.id] = parseInt($(el).val());
+            break;
+          default:
+            formData[el.id] = $(el).val();
+            break;
+        }
       }
     });
 
-    this.collection.create(new app.Rental(formData));
+    var rental = new app.Rental(formData);
+
+    var carList = new app.CarList();
+    carList.fetch();
+    rental.set('car', carList.findWhere({carId: formData['carId']}));
+
+    this.collection.create(rental);
   }
 });

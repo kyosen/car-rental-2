@@ -34,11 +34,21 @@ app.CarListView = Backbone.View.extend({
 
     $('#addCar div').children('input').each(function (i, el) {
       if ($(el).val() != '') {
-        formData[el.id] = $(el).val();
+        switch (el.id) {
+          case 'capacity':
+          case 'feePerDay':
+            formData[el.id] = parseInt($(el).val());
+            break;
+          default:
+            formData[el.id] = $(el).val();
+            break;
+        }
       }
     });
-    formData['carId'] = this.collection.nextCarId();
 
-    this.collection.create(new app.Car(formData));
+    var car = new app.Car(formData);
+    car.set('carId', this.collection.nextCarId());
+
+    this.collection.create(car);
   }
 });
