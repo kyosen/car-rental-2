@@ -52,5 +52,12 @@ app.RentalListView = Backbone.View.extend({
     rental.set('car', carList.findWhere({carId: formData['carId']}));
 
     this.collection.create(rental);
+  },
+
+  selectCar: function (car) {
+    $('input#carId').val(car.get('carId'));
+    $('input#rentalCarType').val(car.get('carType'));
+    $('input#rentalCapacity').val(car.get('capacity'));
+    $('input#rentalFeePerDay').val(car.get('feePerDay'));
   }
 });

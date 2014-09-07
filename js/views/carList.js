@@ -21,6 +21,7 @@ app.CarListView = Backbone.View.extend({
       model: item
     });
     this.$el.append(carView.render().el);
+    this.listenTo(carView, 'selectCar', this.selectCar);
   },
 
   events: {
@@ -50,5 +51,9 @@ app.CarListView = Backbone.View.extend({
     car.set('carId', this.collection.nextCarId());
 
     this.collection.create(car);
+  },
+
+  selectCar: function (car) {
+    this.trigger('selectCar', car);
   }
 });

@@ -11,7 +11,12 @@ app.CarView = Backbone.View.extend({
   },
 
   events: {
-    'click .delete': 'deleteCar'
+    'click .delete': 'deleteCar',
+    'click .rental': 'selectCar'
+  },
+
+  selectCar: function () {
+    this.trigger('selectCar', this.model);
   },
 
   deleteCar: function () {
