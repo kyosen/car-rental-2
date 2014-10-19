@@ -30,28 +30,14 @@ app.RentalListView = Backbone.View.extend({
   addRental: function (e) {
     e.preventDefault();
 
-    var formData = {};
+    var rental = new app.Rental();
+    rental.set('fromDate', $('input#fromDate').val());
+    rental.set('toDate', $('input#toDate').val());
+    rental.set('carId', parseInt($('input#carId').val()));
+    rental.set('customer', $('input#customer').val());
+    rental.set('telephone', $('input#telephone').val());
 
-    $('#addRental div').children('input').each(function (i, el) {
-      if ($(el).val() != '') {
-        switch (el.id) {
-          case 'carId':
-            formData[el.id] = parseInt($(el).val());
-            break;
-          default:
-            formData[el.id] = $(el).val();
-            break;
-        }
-      }
-    });
-
-    var rental = new app.Rental(formData);
-
-    var carList = new app.CarList();
-    carList.fetch();
-    rental.set('car', carList.findWhere({carId: formData['carId']}));
-
-    this.collection.create(rental);
+    this.trigger('rentalCar', rental);
   },
 
   selectCar: function (car) {
