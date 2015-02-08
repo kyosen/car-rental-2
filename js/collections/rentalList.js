@@ -6,14 +6,14 @@ app.RentalList = Backbone.Collection.extend({
   model: app.Rental,
   localStorage: new Backbone.LocalStorage('rentals-backbone'),
 
-  nextOrder: function () {
+  nextRentalId: function () {
     if (!this.length) {
       return 1;
     }
-    return this.last().get('order') + 1;
+    return this.last().get('rentalId') + 1;
   },
 
   comparator: function (rental) {
-    return rental.get('order');
+    return rental.get('rentalId');
   }
 });

@@ -4,6 +4,7 @@ var app = app || {};
 
 app.Rental = Backbone.Model.extend({
   defaults: {
+    rentalId: 0,
     fromDate: null,
     toDate: null,
     carId: null,

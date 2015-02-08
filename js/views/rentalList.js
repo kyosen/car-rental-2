@@ -31,6 +31,7 @@ app.RentalListView = Backbone.View.extend({
     e.preventDefault();
 
     var rental = new app.Rental();
+    rental.set('rentalId', this.collection.nextRentalId());
     rental.set('fromDate', $('input#fromDate').val());
     rental.set('toDate', $('input#toDate').val());
     rental.set('carId', parseInt($('input#carId').val()));
