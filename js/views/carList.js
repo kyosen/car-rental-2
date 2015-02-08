@@ -20,7 +20,7 @@ app.CarListView = Backbone.View.extend({
     var carView = new app.CarView({
       model: item
     });
-    this.$el.append(carView.render().el);
+    this.$el.find('#carList').append(carView.render().el);
     this.listenTo(carView, 'selectCar', this.selectCar);
   },
 
@@ -38,6 +38,7 @@ app.CarListView = Backbone.View.extend({
     car.set('feePerDay', parseInt($('input#feePerDay').val()));
 
     this.collection.create(car);
+    $('#addCarDialog').modal('hide');
   },
 
   selectCar: function (car) {

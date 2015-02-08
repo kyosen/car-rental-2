@@ -45,70 +45,74 @@
       </li>
     </ul>
 
-    <table id="cars" class="table">
-      <tr>
-        <th>ID</th>
-        <th>車種</th>
-        <th>乗車人員</th>
-        <th>レンタル料金（1日）</th>
-        <th></th>
-      </tr>
-    </table>
+    <div id="cars">
+      <div class="modal fade" id="addCarDialog" role="dialog"
+           tabindex="-1" aria-labelledby="addCarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title">自動車の追加</h4>
+            </div>
+            <form class="form-horizontal" action="#" role="form">
+              <div class="modal-body">
+                <div class="form-group">
+                  <label name="carType" class="col-sm-4 control-label">車種</label>
+                  <div class="col-sm-8">
+                    <input type="text" id="carType" name="carType" class="form-control" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label name="capacity" class="col-sm-4 control-label">乗車人員</label>
+                  <div class="col-sm-8">
+                    <input type="text" id="capacity" name="capacity" class="form-control" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label name="feePerDay" class="col-sm-4 control-label">レンタル料金（1日）</label>
+                  <div class="col-sm-8">
+                    <input type="text" id="feePerDay" name="feePerDay" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  キャンセル
+                </button>
+                <button id="add" type="button" class="btn btn-primary">追加</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <table id="carList" class="table">
+        <tr>
+          <th>ID</th>
+          <th>車種</th>
+          <th>乗車人員</th>
+          <th>レンタル料金（1日）</th>
+          <th></th>
+        </tr>
+      </table>
+    </div>
 
     <h2>予約リスト</h2>
 
-    <table id="rentals" class="table">
-      <tr>
-        <th>ID</th>
-        <th>開始日</th>
-        <th>終了日</th>
-        <th>自動車ID</th>
-        <th>顧客氏名</th>
-        <th>電話番号</th>
-        <th></th>
-      </tr>
-    </table>
-  </div>
-
-  <div class="modal fade" id="addCarDialog" role="dialog"
-       tabindex="-1" aria-labelledby="addCarLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title">自動車の追加</h4>
-        </div>
-        <form class="form-horizontal" action="#" role="form">
-          <div class="modal-body">
-            <div class="form-group">
-              <label name="carType" class="col-sm-4 control-label">車種</label>
-              <div class="col-sm-8">
-                <input type="text" id="carType" name="carType" class="form-control" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label name="capacity" class="col-sm-4 control-label">乗車人員</label>
-              <div class="col-sm-8">
-                <input type="text" id="capacity" name="capacity" class="form-control" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label name="feePerDay" class="col-sm-4 control-label">レンタル料金（1日）</label>
-              <div class="col-sm-8">
-                <input type="text" id="feePerDay" name="feePerDay" class="form-control" />
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-              キャンセル
-            </button>
-            <input id="add" type="submit" class="btn btn-primary" value="追加" />
-          </div>
-        </form>
-      </div>
+    <div id="rentals">
+      <table id="rentalList" class="table">
+        <tr>
+          <th>ID</th>
+          <th>開始日</th>
+          <th>終了日</th>
+          <th>自動車ID</th>
+          <th>顧客氏名</th>
+          <th>電話番号</th>
+          <th></th>
+        </tr>
+      </table>
     </div>
   </div>
 

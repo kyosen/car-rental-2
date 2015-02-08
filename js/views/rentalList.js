@@ -20,7 +20,7 @@ app.RentalListView = Backbone.View.extend({
     var rentalView = new app.RentalView({
       model: item
     });
-    this.$el.append(rentalView.render().el);
+    this.$el.find('#rentalList').append(rentalView.render().el);
   },
 
   events: {
@@ -39,6 +39,7 @@ app.RentalListView = Backbone.View.extend({
     rental.set('telephone', $('input#telephone').val());
 
     this.trigger('rentalCar', rental);
+    $('#addRentalDialog').modal('hide');
   },
 
   selectCar: function (car) {
