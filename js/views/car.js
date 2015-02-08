@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.CarView = Backbone.View.extend({
-  tagName: 'div',
+  tagName: 'tr',
   className: 'carContainer',
   template: _.template($('#carTemplate').html()),
 

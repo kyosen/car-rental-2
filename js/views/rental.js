@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.RentalView = Backbone.View.extend({
-  tagName: 'div',
+  tagName: 'tr',
   className: 'rentalContainer',
   template: _.template($('#rentalTemplate').html()),
 
