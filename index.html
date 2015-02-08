@@ -25,8 +25,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/">レンタル</a></li>
-            <li><a href="/admin.html">管理者用</a></li>
+            <li><a href="/">予約</a></li>
+            <li><a href="/admin.html">管理用</a></li>
           </ul>
         </div>
       </div>
@@ -142,7 +142,7 @@
       <td><%= carType %></td>
       <td><%= capacity %></td>
       <td><%= feePerDay %></td>
-      <td><button type="button" class="rental btn btn-primary" data-toggle="modal" data-target="#addRentalDialog">レンタル</button></td>
+      <td><button type="button" class="rental btn btn-primary btn-xs" data-toggle="modal" data-target="#addRentalDialog">予約</button></td>
     </script>
 
     <script id="rentalTemplate" type="text/template">
@@ -152,7 +152,7 @@
       <td><%= carId %></td>
       <td><%= customer %></td>
       <td><%= telephone %></td>
-      <td><button type="button" class="delete btn btn-danger">削除</button></td>
+      <td><button type="button" class="delete btn btn-danger btn-xs">削除</button></td>
     </script>
 
     <script src="js/lib/jquery-2.1.1.min.js"></script>
