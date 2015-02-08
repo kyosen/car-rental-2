@@ -3,44 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>自動車レンタル</title>
+  <title>自動車レンタル - 管理</title>
   <link rel="stylesheet" href="assets/base.css">
 </head>
 <body>
   <div id="cars">
+    <form id="addCar" action="#">
+      <div>
+        <label for="carType">車種: </label>
+        <input id="carType" type="text">
+
+        <label for="capacity">乗車人員: </label>
+        <input id="capacity" type="text">
+
+        <label for="feePerDay">レンタル料金（1日）: </label>
+        <input id="feePerDay" type="text">
+
+        <button id="add">追加</button>
+      </div>
+    </form>
   </div>
 
   <hr>
+
   <div id="rentals">
-    <form id="addRental" action="#">
-      <div>
-        <label for="fromDate">開始日: </label>
-        <input id="fromDate" type="text">
-
-        <label for="toDate">終了日: </label>
-        <input id="toDate" type="text"><br>
-
-        <label for="carId">自動車ID: </label>
-        <input id="carId" type="text" readonly><br>
-
-        <label for="rentalCarType">車種: </label>
-        <input id="rentalCarType" type="text" readonly>
-
-        <label for="rentalCapacity">乗車人員: </label>
-        <input id="rentalCapacity" type="text" readonly>
-
-        <label for="rentalFeePerDay">レンタル料金（1日）: </label>
-        <input id="rentalFeePerDay" type="text" readonly><br>
-
-        <label for="customer">顧客氏名: </label>
-        <input id="customer" type="text">
-
-        <label for="telephone">電話番号: </label>
-        <input id="telephone" type="text">
-
-        <button id="rentalAdd">追加</button>
-      </div>
-    </form>
   </div>
 
   <script id="carTemplate" type="text/template">
@@ -51,7 +37,7 @@
       <li><%= feePerDay %></li>
     </ul>
 
-    <button class="rental">レンタル</button>
+    <button class="delete">削除</button>
   </script>
 
   <script id="rentalTemplate" type="text/template">
